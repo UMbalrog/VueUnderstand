@@ -1,0 +1,22 @@
+{
+  "name": "vueunderstand",
+  "version": "1.0.0",
+  "description": "Vue源码解读",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UMbalrog/VueUnderstand.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "xujie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UMbalrog/VueUnderstand/issues"
+  },
+  "homepage": "https://github.com/UMbalrog/VueUnderstand#readme"
+}
