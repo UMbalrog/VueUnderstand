@@ -4,16 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>vue测试页面</title>
 </head>
 <body>
   <script>
     var Person = {};
-    Object.defineProperty(Person,'name',{
-      value:'jack'
+    var timer = 'null';
+    Object.defineProperty(Person, 'name', {
+      //属性描述符
+      value:'jack',
+      writable:true,    //默认为false不可修改
+      //存取描述符不可和value、writable一起用
+      // get:function(){      
+      //   return timer
+      // },
+      // set:function(val){
+      //   timer = val
+      // },
+      //配置
+      configurable:true,   //是否可删除 默认false不可以
+      enumerable:false     //是否可枚举 默认false不可以
     })
-    Person.name = 'rose';
-    console.log(Person.name);
+    // Object.defineProperty(Person, 'name', {
+    //   value: 'rose'
+    // })
+
+    Object.preventExtensions(Person);  //禁止扩展 但可通过Object.defineProperty修改
+    
+    // Object.defineProperty(Person,'name',{
+    //   value:'23'
+    // })
+
+    Object.seal(Person);   //密封对象 Object.defineProperty也不可修个，他是再调用Object.preventExtensions的基础上，再将原有属性的configurable:false
+
+    Object.freeze(Person);  //冻结，将writable:false
+    // Person.name = 'rose'
+    // console.log(Person.name);
+
+
   </script>
 </body>
 </html>
